@@ -1,0 +1,38 @@
+@import '../../styles/index.scss';
+
+.nav {
+  @include flexBetween;
+  position: fixed;
+  top: 0;
+  padding: 0px 50px;
+  background-color: $navy;
+  width: 100%;
+
+  .link-section {
+    display: flex;
+    align-items: center;
+
+    .link-list {
+      @include flexBetween;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      .list-item {
+        margin: 0 10px;
+        position: relative;
+        font-size: $font-smish;
+        counter-increment: item 1;
+        &:before {
+          content: '0' counter(item) '.';
+          text-align: right;
+          color: $green;
+          font-size: $font-xs;
+        }
+        .item-link {
+          padding: 12px 10px;
+        }
+      }
+    }
+  }
+}
